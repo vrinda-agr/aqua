@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSmart Pro - Revolutionary Smart RO Water Purifier</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        /* ========================================================= */
+        /* === Original Landing Page Styles (mostly unchanged) === */
+        /* ========================================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "💧";
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00ff88;
+        }
+
+        .cta-button {
+            background: #00ff88;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #00cc66;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .showcase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .showcase-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .showcase-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .spec-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .spec-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .spec-list li::before {
+            content: "✓";
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-3d {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative; /* Crucial for positioning internal elements */
+            height: 500px; /* Define height for the 3D container */
+            display: flex; /* Use flex to center content if needed */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ========================================================= */
+        /* === Three.js Demo Specific Styles (adapted) === */
+        /* ========================================================= */
+        #threejs-container { /* Renamed from #container to avoid conflict */
+            position: absolute; /* The canvas will fill this container */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden; /* Hide anything outside the bounds */
+            border-radius: 15px; /* Match product-3d border-radius */
+            z-index: 1; /* Ensure canvas is below panels */
+        }
+
+        #threejs-container canvas {
+            display: block; /* Remove extra space below canvas */
+        }
+        
+        #info-panel, #controls, #feature-list {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px; /* Slightly reduced padding */
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            z-index: 100; /* Ensure panels are on top */
+            text-align: left; /* Align text within panels */
+            max-width: 250px; /* Constrain width to fit better */
+            font-size: 0.9rem; /* Smaller font for panels */
+        }
+
+        #info-panel {
+            top: 20px;
+            left: 20px;
+        }
+
+        #controls {
+            bottom: 20px;
+            left: 20px;
+            padding: 10px; /* Smaller padding for buttons */
+        }
+
+        .control-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 12px; /* Smaller buttons */
+            margin: 3px; /* Smaller margins */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 11px; /* Smaller font */
+            white-space: nowrap; /* Prevent text wrap on buttons */
+        }
+
+        .control-btn:hover {
+            background: #45a049;
+        }
+
+        .control-btn.active {
+            background: #ff6b6b;
+        }
+
+        #feature-list {
+            top: 20px;
+            right: 20px;
+        }
+
+        .feature-item {
+            margin: 8px 0; /* Slightly reduced margin */
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            font-size: 0.85rem; /* Smaller font */
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px; /* Smaller indicator */
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .status-good { background: #4CAF50; }
+        .status-warning { background: #ff9800; }
+        .status-critical { background: #f44336; }
+
+
+        /* ========================================================= */
+        /* === Remaining Original Landing Page Styles === */
+        /* ========================================================= */
+        /* Technology Section */
+        .technology {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tech-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* App Section */
+        .app-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            color: white;
+        }
+
+        .app-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .app-features {
+            list-style: none;
+        }
+
+        .app-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .app-features li::before {
+            content: "📱";
+            font-size: 1.5rem;
+        }
+
+        .phone-mockup {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative; /* Added for app demo positioning */
+        }
+
+        .phone-screen {
+            width: 250px;
+            height: 450px;
+            background: linear-gradient(45deg, #333, #555);
+            border-radius: 25px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        /* App Demo Specific Styles */
+        .app-carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        .app-screen-slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            box-sizing: border-box;
+        }
+
+        .app-screen-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .app-screen-slide h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .app-screen-slide p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .app-demo-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+
+        .app-demo-controls button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .app-demo-controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #00ff88;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "POPULAR";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00ff88;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin: 1rem 0;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #00ff88;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #00ff88;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) { /* Adjusted breakpoint for panels */
+            .showcase-content,
+            .app-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .product-3d {
+                height: 400px; /* Adjust height for smaller screens */
+            }
+            #info-panel, #controls, #feature-list {
+                position: static; /* Stack panels on smaller screens */
+                margin: 10px auto;
+                max-width: 90%;
+                padding: 10px;
+                text-align: center; /* Center text if stacked */
+                font-size: 0.8rem;
+            }
+            .control-btn {
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Live Status Indicator */
+        .live-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00ff88;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AquaSmart Pro</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#app">App</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#pricing" class="cta-button">Buy Now</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Future of Water Purification</h1>
+            <p>Experience crystal-clear water with AI-powered monitoring, IoT connectivity, and intelligent filtration technology</p>
+            <div class="hero-buttons">
+                <a href="#features" class="cta-button">Explore Features</a>
+                <a href="#technology" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Revolutionary Smart Features</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📱</span>
+                    <h3>Smart App Control</h3>
+                    <p>Monitor water quality, control settings, and receive maintenance alerts from anywhere using our intuitive mobile app with real-time data visualization.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🔬</span>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>Advanced sensors continuously monitor TDS, pH, temperature, and flow rate with instant alerts for any quality changes or system issues.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🤖</span>
+                    <h3>AI-Powered Analytics</h3>
+                    <p>Machine learning algorithms predict maintenance needs, optimize filtration efficiency, and provide personalized water consumption insights.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🌐</span>
+                    <h3>IoT Connectivity</h3>
+                    <p>Seamlessly integrate with your smart home ecosystem. Compatible with Alexa, Google Home, and Apple HomeKit for voice control.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💧</span>
+                    <h3>Multi-Stage Filtration</h3>
+                    <p>Advanced 7-stage purification including RO, UV, UF, and remineralization ensures 99.9% contaminant removal while retaining essential minerals.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Auto-Maintenance</h3>
+                    <p>Self-cleaning cycles, automatic filter replacement alerts, and predictive maintenance reduce manual intervention by 90%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-showcase" id="product">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-text fade-in">
+                    <h2>AquaSmart Pro 3000</h2>
+                    <p>Our flagship smart RO system combines cutting-edge technology with elegant design to deliver the purest water experience. Interact with the 3D model to explore its features!</p>
+                    <ul class="spec-list">
+                        <li>3 Gallons/Day Production Capacity</li>
+                        <li>0.0001 Micron Filtration Accuracy</li>
+                        <li>TDS Reduction: 95-99%</li>
+                        <li>pH Optimization: 7.0-8.5</li>
+                        <li>Energy Efficient: 24W Power Consumption</li>
+                        <li>Compact Design: 15" x 12" x 18"</li>
+                        <li>5-Year Comprehensive Warranty</li>
+                    </ul>
+                    <a href="#pricing" class="cta-button">Get Yours Today</a>
+                </div>
+                <div class="product-3d fade-in">
+                    <div id="threejs-container"></div>
+                    
+                    <div id="info-panel">
+                        <h3>Smart RO Water Purifier</h3>
+                        <p><strong>Model:</strong> AquaSmart Pro 3000</p>
+                        <p><strong>Capacity:</strong> 3 Gallons/Day</p>
+                        <p><strong>TDS:</strong> <span id="tds-value">45</span> PPM</p>
+                        <p><strong>pH:</strong> <span id="ph-value">7.2</span></p>
+                        <p><strong>Status:</strong> <span id="system-status">Optimal</span></p>
+                    </div>
+                    
+                    <div id="controls">
+                        <h4>Controls</h4>
+                        <button class="control-btn" onclick="toggleAnimation()">Pause Animation</button>
+                        <button class="control-btn" onclick="changeView('front')">Front View</button>
+                        <button class="control-btn" onclick="changeView('side')">Side View</button>
+                        <button class="control-btn" onclick="changeView('top')">Top View</button>
+                        <button class="control-btn" onclick="resetView()">Reset View</button>
+                    </div>
+                    
+                    <div id="feature-list">
+                        <h4>Smart Features</h4>
+                        <div class="feature-item">
+                            <span class="status-indicator status-good"></span>
+                            Touch Display Active
+                        </div>
+                        <div class="feature-item">
+                            <span class="status-indicator status-good"></span>
+                            Wi-Fi Connected
+                        </div>
+                        <div class="feature-item">
+                            <span class="status-indicator status-warning"></span>
+                            Filter Life: 30 Days
+                        </div>
+                        <div class="feature-item">
+                            <span class="status-indicator status-good"></span>
+                            Auto-Flush Enabled
+                        </div>
+                        <div class="feature-item">
+                            <span class="status-indicator status-good"></span>
+                            UV Sterilization ON
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technology" id="technology">
+        <div class="container">
+            <h2 class="section-title fade-in">Advanced Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card fade-in">
+                    <h4>Reverse Osmosis</h4>
+                    <p>Ultra-fine membrane technology removes 99.9% of dissolved contaminants, bacteria, and viruses.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h4>UV Sterilization</h4>
+                    <p>Powerful UV-C LED technology eliminates remaining microorganisms for complete water safety.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h4>Smart Sensors</h4>
+                    <p>Multi-parameter monitoring with TDS, pH, temperature, pressure, and flow rate sensors.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h4>Remineralization</h4>
+                    <p>Adds back essential minerals like calcium and magnesium for optimal health and taste.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h4>AI Processing</h4>
+                    <p>Edge computing with machine learning for predictive maintenance and usage optimization.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h4>Cloud Integration</h4>
+                    <p>Secure cloud connectivity for remote monitoring, updates, and data analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-section" id="app">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text fade-in">
+                    <h2>Control Everything From Your Phone</h2>
+                    <p>Our intuitive mobile app puts complete control at your fingertips. Monitor, control, and optimize your water purification system from anywhere.</p>
+                    <ul class="app-features">
+                        <li>Real-time water quality dashboard</li>
+                        <li>Remote system control and scheduling</li>
+                        <li>Maintenance alerts and filter tracking</li>
+                        <li>Water consumption analytics</li>
+                        <li>Family usage profiles</li>
+                        <li>Smart notifications and reminders</li>
+                        <li>Technical support integration</li>
+                    </ul>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="cta-button">Download App</a>
+                        <a href="#" class="btn-secondary" id="view-app-demo">View Demo</a>
+                    </div>
+                </div>
+                <div class="phone-mockup fade-in">
+                    <div class="phone-screen">
+                        <div class="app-carousel" id="app-carousel">
+                            <div class="app-screen-slide active" style="background-color: #0d223d;">
+                                <h4>Home Dashboard</h4>
+                                <p>Live water quality, system status, and quick controls.</p>
+                                <p>💧 TDS: 45 PPM</p>
+                                <p>🟢 Optimal Status</p>
+                            </div>
+                            <div class="app-screen-slide" style="background-color: #1a1a2e;">
+                                <h4>Filter Life</h4>
+                                <p>Track filter health and get replacement reminders.</p>
+                                <p>⚙️ Sediment: 90%</p>
+                                <p>⚙️ Carbon: 75%</p>
+                                <p>⚙️ RO Membrane: 30%</p>
+                            </div>
+                            <div class="app-screen-slide" style="background-color: #004422;">
+                                <h4>Usage Analytics</h4>
+                                <p>See your daily, weekly, and monthly water consumption.</p>
+                                <p>📊 Avg. Daily: 2.5 Gallons</p>
+                                <p>Save water, save money!</p>
+                            </div>
+                            <div class="app-screen-slide" style="background-color: #331144;">
+                                <h4>Settings & Control</h4>
+                                <p>Adjust auto-flush, UV, and receive custom alerts.</p>
+                                <p>✅ Auto-Flush Enabled</p>
+                                <p>💡 UV Sterilization ON</p>
+                            </div>
+                        </div>
+                        <div class="app-demo-controls" id="app-demo-controls" style="display: none;">
+                            <button onclick="changeAppScreen(-1)">Previous</button>
+                            <button onclick="changeAppScreen(1)">Next</button>
+                        </div>
+                    </div>
+                    <p>Available on iOS & Android</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title fade-in">Choose Your Perfect Plan</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in">
+                    <h3>Basic Smart</h3>
+                    <div class="price">$299</div>
+                    <ul class="price-features">
+                        <li>Smart App Control</li>
+                        <li>Real-time TDS Monitoring</li>
+                        <li>Basic Analytics</li>
+                        <li>1-Year Warranty</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Order Now</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <h3>Pro Smart</h3>
+                    <div class="price">$499</div>
+                    <ul class="price-features">
+                        <li>All Basic Features</li>
+                        <li>AI-Powered Analytics</li>
+                        <li>Voice Control Integration</li>
+                        <li>Advanced Sensors</li>
+                        <li>3-Year Warranty</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#" class="cta-button">Order Now</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <h3>Enterprise</h3>
+                    <div class="price">$799</div>
+                    <ul class="price-features">
+                        <li>All Pro Features</li>
+                        <li>Multi-Device Management</li>
+                        <li>Custom Integration</li>
+                        <li>Dedicated Support</li>
+                        <li>5-Year Warranty</li>
+                        <li>On-site Service</li>
+                    </ul>
+                    <a href="#" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AquaSmart Pro</h3>
+                    <p>Revolutionizing water purification with smart technology and intelligent design for a healthier future.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#app">Mobile App</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Installation Guide</a></li>
+                        <li><a href="#">User Manual</a></li>
+                        <li><a href="#">Troubleshooting</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 support@aquasmartpro.com</li>
+                        <li>📞 1-800-AQUASMART</li>
+                        <li>📍 123 Innovation Drive, Tech City</li>
+                        <li>🕒 24/7 Customer Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AquaSmart Pro. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="live-status">
+        <strong>🟢 Live Status</strong><br>
+        <span id="active-users">2,847</span> users online<br>
+        <span id="systems-active">15,234</span> systems active
+    </div>
+
+    <script>
+        // =========================================================
+        // === Three.js Demo JavaScript (adapted) ===
+        // =========================================================
+        let scene, camera, renderer, model, animationId;
+        let isAnimating = true;
+
+        function initThreeJS() {
+            const containerElement = document.getElementById('threejs-container');
+            if (!containerElement) {
+                console.error("Three.js container not found!");
+                return;
+            }
+
+            // Scene setup
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a2e); // Dark background for contrast with model
+            
+            // Camera setup
+            camera = new THREE.PerspectiveCamera(75, containerElement.offsetWidth / containerElement.offsetHeight, 0.1, 1000);
+            camera.position.set(5, 3, 5);
+            camera.lookAt(0, 0, 0);
+            
+            // Renderer setup
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(containerElement.offsetWidth, containerElement.offsetHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            containerElement.appendChild(renderer.domElement);
+            
+            // Lighting setup
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(10, 10, 5);
+            directionalLight.castShadow = true;
+            directionalLight.shadow.mapSize.width = 2048;
+            directionalLight.shadow.mapSize.height = 2048;
+            scene.add(directionalLight);
+            
+            const spotLight = new THREE.SpotLight(0x00ff88, 0.5);
+            spotLight.position.set(-5, 5, 5);
+            scene.add(spotLight);
+            
+            // Create the RO model
+            createROModel();
+            
+            // Start animation
+            animateThreeJS();
+        }
+        
+        function createROModel() {
+            model = new THREE.Group();
+            
+            // Main body (sleek modern design)
+            const bodyGeometry = new THREE.BoxGeometry(2, 3, 1.5);
+            const bodyMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0xffffff,
+                shininess: 100
+            });
+            const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+            body.castShadow = true;
+            body.receiveShadow = true;
+            model.add(body);
+            
+            // Touch display screen
+            const screenGeometry = new THREE.PlaneGeometry(1.2, 0.8);
+            const screenMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x000033,
+                emissive: 0x001133
+            });
+            const screen = new THREE.Mesh(screenGeometry, screenMaterial);
+            screen.position.set(0, 0.8, 0.76);
+            model.add(screen);
+            
+            // Display content
+            const displayGeometry = new THREE.PlaneGeometry(1.0, 0.6);
+            const displayMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x00ff88,
+                emissive: 0x004422 // Glow effect for display
+            });
+            const display = new THREE.Mesh(displayGeometry, displayMaterial);
+            display.position.set(0, 0.8, 0.77);
+            model.add(display);
+            
+            // Water tank (transparent)
+            const tankGeometry = new THREE.CylinderGeometry(0.6, 0.6, 2, 16);
+            const tankMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x4466ff,
+                transparent: true,
+                opacity: 0.3
+            });
+            const tank = new THREE.Mesh(tankGeometry, tankMaterial);
+            tank.position.set(1.5, 0, 0);
+            tank.castShadow = true;
+            model.add(tank);
+            
+            // Water inside tank
+            const waterGeometry = new THREE.CylinderGeometry(0.55, 0.55, 1.5, 16);
+            const waterMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x0088ff,
+                transparent: true,
+                opacity: 0.6
+            });
+            const water = new THREE.Mesh(waterGeometry, waterMaterial);
+            water.position.set(1.5, -0.25, 0);
+            model.add(water);
+            
+            // Filter compartments
+            for (let i = 0; i < 3; i++) {
+                const filterGeometry = new THREE.CylinderGeometry(0.3, 0.3, 0.8, 12);
+                const filterMaterial = new THREE.MeshPhongMaterial({ 
+                    color: i === 0 ? 0xff6b6b : i === 1 ? 0x4ecdc4 : 0xffe66d
+                });
+                const filter = new THREE.Mesh(filterGeometry, filterMaterial);
+                filter.position.set(-1.2, 0.5 - i * 0.9, 0);
+                filter.castShadow = true;
+                model.add(filter);
+            }
+            
+            // Dispenser tap
+            const tapGeometry = new THREE.CylinderGeometry(0.1, 0.1, 0.8, 8);
+            const tapMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x666666,
+                shininess: 200
+            });
+            const tap = new THREE.Mesh(tapGeometry, tapMaterial);
+            tap.position.set(0, -1.8, 0.8);
+            tap.rotation.x = Math.PI / 2;
+            tap.castShadow = true;
+            model.add(tap);
+            
+            // LED status indicators
+            // We'll make these dynamic in the animate function
+            for (let i = 0; i < 5; i++) {
+                const ledGeometry = new THREE.SphereGeometry(0.05, 8, 8);
+                const ledMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x00ff00, // Initial color
+                    emissive: 0x002200 // Initial glow
+                });
+                const led = new THREE.Mesh(ledGeometry, ledMaterial);
+                led.position.set(-0.4 + i * 0.2, 0.3, 0.76);
+                model.add(led);
+            }
+            
+            // Base platform
+            const baseGeometry = new THREE.BoxGeometry(3, 0.2, 2.5);
+            const baseMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x333333
+            });
+            const base = new THREE.Mesh(baseGeometry, baseMaterial);
+            base.position.set(0, -1.7, 0);
+            base.receiveShadow = true;
+            model.add(base);
+            
+            // Add some pipes/connections
+            const pipeGeometry = new THREE.CylinderGeometry(0.05, 0.05, 1.5, 8);
+            const pipeMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x888888
+            });
+            const pipe1 = new THREE.Mesh(pipeGeometry, pipeMaterial);
+            pipe1.position.set(0.5, 0, 0);
+            pipe1.rotation.z = Math.PI / 2;
+            model.add(pipe1);
+            
+            scene.add(model);
+        }
+        
+        function animateThreeJS() {
+            animationId = requestAnimationFrame(animateThreeJS);
+            
+            if (isAnimating) {
+                model.rotation.y += 0.01;
+                
+                // Animate water level
+                const time = Date.now() * 0.001;
+                const waterMesh = model.children.find(child => 
+                    child.material && child.material.color.getHex() === 0x0088ff
+                );
+                if (waterMesh) {
+                    waterMesh.position.y = -0.25 + Math.sin(time * 2) * 0.05; // Faster, smaller oscillation
+                }
+                
+                // Animate LED indicators (only the display LEDs, not the status panel)
+                // Assuming LEDs are the last 5 added spheres for now
+                for(let i = 0; i < 5; i++) {
+                    const led = model.children[model.children.length - 1 - i]; // Accessing from end, adjust if model structure changes
+                    if (led && led.geometry instanceof THREE.SphereGeometry && led.geometry.parameters.radius === 0.05) {
+                        led.material.emissive.setHex(
+                            Math.sin(time * 5 + i * 0.5) > 0.5 ? 0x00aa00 : 0x000000 // Blinking effect
+                        );
+                    }
+                }
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        function toggleAnimation() {
+            isAnimating = !isAnimating;
+            const btn = event.target;
+            btn.textContent = isAnimating ? 'Pause Animation' : 'Start Animation';
+            btn.classList.toggle('active', !isAnimating);
+        }
+        
+        function changeView(view) {
+            // Stop auto-rotation when changing view
+            isAnimating = false;
+            document.querySelector('#controls .control-btn').textContent = 'Start Animation';
+            document.querySelector('#controls .control-btn').classList.add('active');
+
+            const targetPosition = new THREE.Vector3();
+            const lookAtTarget = new THREE.Vector3(0, 0, 0); // Always look at the center of the model
+
+            switch(view) {
+                case 'front':
+                    targetPosition.set(0, 0, 6);
+                    break;
+                case 'side':
+                    targetPosition.set(6, 0, 0);
+                    break;
+                case 'top':
+                    targetPosition.set(0, 6, 0);
+                    break;
+            }
+
+            // Simple animation for camera movement (can be enhanced with Tween.js)
+            const startPosition = camera.position.clone();
+            const duration = 500; // milliseconds
+            const startTime = performance.now();
+
+            function animateCamera() {
+                const elapsed = performance.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                camera.position.lerpVectors(startPosition, targetPosition, progress);
+                camera.lookAt(lookAtTarget);
+                renderer.render(scene, camera);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateCamera);
+                }
+            }
+            requestAnimationFrame(animateCamera);
+        }
+        
+        function resetView() {
+            // Stop auto-rotation when resetting
+            isAnimating = false;
+            document.querySelector('#controls .control-btn').textContent = 'Start Animation';
+            document.querySelector('#controls .control-btn').classList.add('active');
+
+            const startPosition = camera.position.clone();
+            const targetPosition = new THREE.Vector3(5, 3, 5);
+            const startRotationY = model.rotation.y;
+            const targetRotationY = 0;
+            const lookAtTarget = new THREE.Vector3(0,0,0);
+
+            const duration = 500;
+            const startTime = performance.now();
+
+            function animateReset() {
+                const elapsed = performance.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                camera.position.lerpVectors(startPosition, targetPosition, progress);
+                model.rotation.y = startRotationY + (targetRotationY - startRotationY) * progress;
+                camera.lookAt(lookAtTarget);
+                renderer.render(scene, camera);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateReset);
+                }
+            }
+            requestAnimationFrame(animateReset);
+        }
+        
+        // Handle window/container resize for Three.js canvas
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                if (entry.target.id === 'threejs-container') {
+                    const width = entry.contentRect.width;
+                    const height = entry.contentRect.height;
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(width, height);
+                }
+            }
+        });
+
+        // Observe the container when initThreeJS is called
+        // We'll call this after the DOM is fully loaded.
+        
+        // Mouse controls for rotation
+        let mouseDown = false;
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        // Get the container element for event listeners
+        let threeJsContainer = null; // Will be set after DOM loaded
+
+        // Attach event listeners after container exists
+        function setupMouseControls() {
+            threeJsContainer = document.getElementById('threejs-container');
+            if (threeJsContainer) {
+                threeJsContainer.addEventListener('mousedown', (event) => {
+                    mouseDown = true;
+                    mouseX = event.clientX;
+                    mouseY = event.clientY;
+                    event.preventDefault(); // Prevent text selection etc.
+                });
+                
+                window.addEventListener('mouseup', () => { // Use window for mouseup in case user drags outside
+                    mouseDown = false;
+                });
+                
+                threeJsContainer.addEventListener('mousemove', (event) => {
+                    if (!mouseDown) return;
+                    
+                    const deltaX = event.clientX - mouseX;
+                    const deltaY = event.clientY - mouseY;
+                    
+                    model.rotation.y += deltaX * 0.005; // Slower rotation
+                    model.rotation.x += deltaY * 0.005;
+                    
+                    mouseX = event.clientX;
+                    mouseY = event.clientY;
+                });
+            }
+        }
+        
+        // Simulate real-time data updates
+        setInterval(() => {
+            const tdsValue = document.getElementById('tds-value');
+            const phValue = document.getElementById('ph-value');
+            const status = document.getElementById('system-status');
+            
+            if (tdsValue && phValue && status) {
+                tdsValue.textContent = (40 + Math.random() * 20).toFixed(0);
+                phValue.textContent = (7.0 + Math.random() * 0.5).toFixed(1);
+                
+                const statuses = ['Optimal', 'Good', 'Filtering', 'Maintenance Soon'];
+                status.textContent = statuses[Math.floor(Math.random() * statuses.length)];
+            }
+        }, 3000);
+
+        // =========================================================
+        // === App Demo JavaScript (New) ===
+        // =========================================================
+        let currentAppScreen = 0;
+        let appScreens;
+        let appDemoControls;
+
+        function showAppScreen(index) {
+            if (!appScreens) return;
+            // Hide all screens
+            appScreens.forEach(screen => screen.classList.remove('active'));
+            // Show the selected screen
+            appScreens[index].classList.add('active');
+        }
+
+        function changeAppScreen(direction) {
+            currentAppScreen += direction;
+            if (currentAppScreen >= appScreens.length) {
+                currentAppScreen = 0;
+            } else if (currentAppScreen < 0) {
+                currentAppScreen = appScreens.length - 1;
+            }
+            showAppScreen(currentAppScreen);
+        }
+
+        document.getElementById('view-app-demo').addEventListener('click', function(e) {
+            e.preventDefault();
+            appScreens = document.querySelectorAll('.app-screen-slide');
+            appDemoControls = document.getElementById('app-demo-controls');
+
+            if (appScreens.length > 0) {
+                // Show the carousel if it's not already
+                document.getElementById('app-carousel').style.display = 'block';
+                appDemoControls.style.display = 'flex'; // Show controls
+                currentAppScreen = 0; // Start from the first screen
+                showAppScreen(currentAppScreen);
+            }
+        });
+
+
+        // =========================================================
+        // === Original Landing Page JavaScript ===
+        // =========================================================
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Live status updates (for the fixed bottom-right panel)
+        function updateLiveStatus() {
+            const activeUsers = document.getElementById('active-users');
+            const systemsActive = document.getElementById('systems-active');
+            
+            if (activeUsers && systemsActive) {
+                const users = 2800 + Math.floor(Math.random() * 100);
+                const systems = 15200 + Math.floor(Math.random() * 100);
+                
+                activeUsers.textContent = users.toLocaleString();
+                systemsActive.textContent = systems.toLocaleString();
+            }
+        }
+
+        // Update live status every 10 seconds
+        setInterval(updateLiveStatus, 10000);
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+        });
+
+        // Pricing card hover effects
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = card.classList.contains('featured') ? 'scale(1.05)' : 'translateY(0) scale(1)';
+            });
+        });
+
+        // Feature card animations
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            });
+        });
+
+        // Initialize the Three.js model after the DOM is fully loaded
+        window.addEventListener('load', () => {
+            initThreeJS();
+            setupMouseControls(); // Setup mouse controls after Three.js is initialized
+            const threeJsContainerElement = document.getElementById('threejs-container');
+            if(threeJsContainerElement) {
+                 resizeObserver.observe(threeJsContainerElement);
+            }
+            // Ensure the toggle animation button text is correct on load
+            const toggleBtn = document.querySelector('#controls .control-btn');
+            if (toggleBtn) {
+                toggleBtn.textContent = isAnimating ? 'Pause Animation' : 'Start Animation';
+                toggleBtn.classList.toggle('active', !isAnimating);
+            }
+        });
+
+    </script>
+</body>
+</html>
